@@ -15,6 +15,9 @@ FROM anapsix/alpine-java
 
 MAINTAINER coffeepac@gmail.com
 
+# Download the JMX exporter
+ADD https://repo1.maven.org/maven2/io/prometheus/jmx/jmx_prometheus_javaagent/0.16.1/jmx_prometheus_javaagent-0.16.1.jar /app/jmx_prometheus_javaagent.jar
+
 WORKDIR /opt/kafka-monitor
 ADD build/ build/
 ADD bin/xinfra-monitor-start.sh bin/xinfra-monitor-start.sh
